@@ -19,5 +19,11 @@ function controller($searchedUri, $params)
     if (!method_exists($controllerInstance, $method)) {
         throw new Exception('The method: '. "'$method' does not exists on controller: '.$controller.'");
     }
-    return $controllerInstance->{$method}($params);
+    $controller = $controllerInstance->{$method}($params);
+
+    if ($_SERVER['REQUEST_METHOD'] == 'POST')
+    {
+        die();
+    }
+    return $controller;
 }

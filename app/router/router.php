@@ -70,12 +70,15 @@ function formatParamsExtracted(array $uri, $params): array
 function router(): mixed
 {
     $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+
     $routes = require __DIR__ . "/../router/routes.php";
-    $searchedUri = searchUriInArrayRoutes($uri, $routes);
+    $requestMethod = $_SERVER['REQUEST_METHOD'];
+
+    $searchedUri = searchUriInArrayRoutes($uri, $routes[$requestMethod]);
 
     $params = [];
     if (empty($searchedUri)) {
-        $searchedUri = regExpressionMatchArrayRoutes($uri, $routes);
+        $searchedUri = regExpressionMatchArrayRoutes($uri, $routes[$requestMethod]);
         $uri = explode('/', ltrim($uri, '/'));
         $params = extractParamsFromUri($uri, $searchedUri);
         $params = formatParamsExtracted($uri, $params);

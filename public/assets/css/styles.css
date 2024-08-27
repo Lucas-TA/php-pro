@@ -13,6 +13,7 @@ html, body {
 }
 .users-box {
     border: 3px solid green;
+    padding: 10px;
 }
 .header {
     display: flex;
@@ -42,4 +43,27 @@ html, body {
     background-color: #97f6ad;
     padding: 10px;
     margin: 10px 0;
+}
+.box-login {
+    margin: 0 auto;
+    background-color: tomato;
+    padding: 5px;
+    width: 400px;
+    color: white;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.box-login fieldset {
+    width: 100%;
+    text-align: left;
+}
+.box-login input {
+    width: 100%;
+}
+.box-login button {
+    width: 50%;
+    margin: 0 auto;
 }
