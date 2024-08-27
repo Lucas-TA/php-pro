@@ -1,0 +1,26 @@
+{
+    "name": "lascencao/php-pro",
+    "description": "php-pro",
+    "autoload": {
+        "psr-4": {
+            "app\\": "app/"
+        },
+        "files": [
+            "app/helpers/constants.php",
+            "app/router/router.php",
+            "app/core/controller.php",
+            "app/database/connect.php",
+            "app/database/fetch.php",
+            "app/helpers/redirect.php"
+        ]
+    },
+    "authors": [
+        {
+            "name": "lascencao",
+            "email": "lucas.teixeira@clickweb.com.br"
+        }
+    ],
+    "require": {
+      "ext-pdo": "*"
+    }
+}
