@@ -10,7 +10,11 @@ function validate(array $validations)
             $result[$field] = $validate($field);
 
         } else {
-
+            $explodedPipeValidate = explode('|', $validate);
+            foreach ($explodedPipeValidate as $validateExploded)
+            {
+                $result[$field] = $validateExploded[$field];
+            }
         }
     }
     if (in_array(false, $result))

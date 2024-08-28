@@ -14,7 +14,7 @@ class Login
     public function store()
     {
         $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
-        $password = filter_input(INPUT_POST, 'password', FILTER_UNSAFE_RAW);
+        $password = filter_input(INPUT_POST, 'password');
 
         if (empty($email) || empty($password))
         {
@@ -28,7 +28,7 @@ class Login
         }
         if (!password_verify($password, $user->password))
         {
-            return setMessageAndRefirect('message', 'User not found.', '/login');
+            return setMessageAndRefirect('message', 'Password is incorrect', '/login');
         }
         $_SESSION[LOGGED] = $user;
         return redirect('/');
