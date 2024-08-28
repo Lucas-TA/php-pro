@@ -6,6 +6,10 @@
 html, body {
     height: 100%;
 }
+h2 {
+    text-align: center;
+    padding: 20px 0;
+}
 .container {
     margin: 0 auto;
     width: 70%;
@@ -46,11 +50,9 @@ html, body {
 }
 .box-login {
     margin: 0 auto;
-    background-color: tomato;
     padding: 5px;
     width: 400px;
-    color: white;
-    text-align: center;
+    text-align: left;
 
     display: flex;
     flex-direction: column;
@@ -63,7 +65,29 @@ html, body {
 .box-login input {
     width: 100%;
 }
-.box-login button {
+button {
     width: 50%;
+    height: 30px;
     margin: 0 auto;
+}
+input {
+    height: 30px;
+}
+.box-register
+{
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-self: center;
+}
+.box-name-and-last-name {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+.box-name-and-last-name > div {
+    display: flex;
+    flex-direction: column;
 }
